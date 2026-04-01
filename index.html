@@ -1,0 +1,148 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Водительский Таймер</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        header h1 {
+            margin: 0 0 10px 0;
+        }
+        main {
+            max-width: 700px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .info-block {
+            background-color: #fff;
+            border-left: 6px solid #4CAF50;
+            padding: 20px 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .info-block h2 {
+            margin-top: 0;
+            color: #4CAF50;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        .form-block {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .form-block h2 {
+            margin-top: 0;
+            color: #4CAF50;
+        }
+        input[type="email"], input[type="date"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0 20px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            color: #777;
+            font-size: 14px;
+        }
+        max-width: 600px {
+            header, main {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Водительский Таймер</h1>
+        <p>Простое решение для избежания штрафов за просроченные права</p>
+    </header>
+
+    <main>
+        <div class="info-block">
+            <h2>Зачем нужен сервис:</h2>
+            <ul>
+                <li>Срок действия водительских прав — 10 лет</li>
+                <li>ГИБДД не присылает напоминания</li>
+                <li>Штраф за просроченные права до 15 000 ₽</li>
+                <li>«Водительский Таймер» напомнит за 3 месяца до окончания</li>
+            </ul>
+        </div>
+
+        <div class="info-block">
+            <h2>Как работает:</h2>
+            <ul>
+                <li>Вы вводите дату получения прав и email</li>
+                <li>Система вычисляет дату окончания и дату напоминания</li>
+                <li>Вы получаете уведомление за 3 месяца до окончания срока</li>
+            </ul>
+        </div>
+
+        <div class="form-block">
+            <h2>Получить напоминание</h2>
+            <form id="reminderForm">
+                <input type="email" id="email" placeholder="Ваш Email" required>
+                <input type="date" id="licenseDate" required>
+                <button type="submit">Получить напоминание</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 Водительский Таймер. Все права защищены.
+    </footer>
+
+    <script>
+        document.getElementById('reminderForm').addEventListener('submit', function(e){
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const date = document.getElementById('licenseDate').value;
+            if(email && date){
+                sessionStorage.setItem('email', email);
+
+
+e.setItem('licenseDate', date);
+                window.location.href = 'reminder.html';
+            } else {
+                alert('Пожалуйста, заполните все поля.');
+            }
+        });
+    </script>
+</body>
+</html> sessionStorag
